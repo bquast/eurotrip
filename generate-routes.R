@@ -1,8 +1,7 @@
-eurotrip <- list()  # collect all routes here
+eurotrip <- list()
 
 for (city_name in names(landmarks)) {
-  
-  cat("Processing", city_name, "...\n")
+  cat("\n=== ", city_name, " ===\n")
   points <- landmarks[[city_name]]
   n <- length(points)
   
@@ -18,8 +17,6 @@ for (city_name in names(landmarks)) {
       
       cat(sprintf("  %s → %s ... ", start_name, end_name))
       
-      r <- NULL
-      
       tryCatch({
         
         r <- ors_directions(
@@ -31,22 +28,20 @@ for (city_name in names(landmarks)) {
         
         cat("[OK] ")
         
-        # Debug: show top-level properties keys
         feat1 <- r$features[[1]]
         props <- feat1$properties
         cat("properties keys:", paste(names(props), collapse = ", "), " | ")
         
-        # Find summary - try both common locations
         summ <- NULL
-        seg  <- NULL
+        seg <- NULL
         
-        # Case 1: summary directly under properties (sometimes seen)
+        # Summary directly under properties (your case)
         if (!is.null(props$summary) && !is.null(props$summary$distance)) {
           summ <- props$summary
           cat("summary at properties level | ")
         }
         
-        # Case 2: summary under segments[[1]] (most common in GeoJSON)
+        # Fallback: under segments
         if (is.null(summ) && !is.null(props$segments) && length(props$segments) > 0) {
           seg <- props$segments[[1]]
           if (!is.null(seg$summary) && !is.null(seg$summary$distance)) {
@@ -60,7 +55,7 @@ for (city_name in names(landmarks)) {
           next
         }
         
-        dist_m  <- summ$distance
+        dist_m <- summ$distance
         dur_min <- round(summ$duration / 60, 1)
         
         cat(sprintf("distance: %.0f m | ", dist_m))
@@ -89,32 +84,17 @@ for (city_name in names(landmarks)) {
         
       }, error = function(e) {
         cat("→ ERROR:", conditionMessage(e), "\n")
-        if (!is.null(r)) {
-          cat("Partial response str:\n")
-          str(r, max.level = 1)
-        }
       })
       
-      Sys.sleep(1.2)  # polite to API
-      
-    }  # end j
-  }  # end i
+      Sys.sleep(1.3)
+    }
+  }
   
   eurotrip <- c(eurotrip, routes_city)
-  cat("  → Collected", length(routes_city), "usable routes for", city_name, "\n\n")
-  
-}  # end city
-
-cat("Total routes collected:", length(eurotrip), "\n")
-
-# Save as .RData (can load with load("eurotrip_named_landmarks.RData"))
-save(eurotrip, landmarks, file = "eurotrip_named_landmarks.Rdata")
-cat("Saved to eurotrip_named_landmarks.Rdata\n")
-
-# Optional: quick look at first route if any exist
-if (length(eurotrip) > 0) {
-  first <- eurotrip[[1]]
-  cat("\nExample route:\n")
-  cat("From:", first$start_name, "to", first$end_name, "\n")
-  cat("Distance:", first$distance_m, "m | Duration:", first$duration_min, "min\n")
+  cat(" → Collected", length(routes_city), "usable routes for", city_name, "\n\n")
 }
+
+cat("Total routes:", length(eurotrip), "\n")
+
+save(eurotrip, landmarks, file = "eurotrip.rdata")
+cat("Saved to eurotrip.rdata\n")
