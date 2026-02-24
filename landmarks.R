@@ -1,66 +1,142 @@
 landmarks <- list(
-  
   zurich_altstadt = list(
-    list(name = "Grossmuenster",        coord = c(8.5436, 47.3697)),
-    list(name = "Fraumuenster",         coord = c(8.5419, 47.3695)),
-    list(name = "Lindenhof",            coord = c(8.5405, 47.3712)),
-    list(name = "St_Peter_Kirche",      coord = c(8.5400, 47.3698)),
-    list(name = "Niederdorf_Central",   coord = c(8.5480, 47.3730)),
-    list(name = "Muensterhof",          coord = c(8.5410, 47.3701)),
-    list(name = "Limmatquai_Rathaus",   coord = c(8.5428, 47.3750)),
-    list(name = "Bahnhofstrasse_Paradeplatz", coord = c(8.5385, 47.3685)),
-    list(name = "Predigerkirche",       coord = c(8.5451, 47.3739))   # a bit north-east edge
+    list(name = "Grossmuenster",               coord = c(8.5436, 47.3697)),
+    list(name = "Fraumuenster",                coord = c(8.5419, 47.3695)),
+    list(name = "Lindenhof",                   coord = c(8.5405, 47.3712)),
+    list(name = "St_Peter_Kirche",             coord = c(8.5400, 47.3698)),
+    list(name = "Niederdorf_Central",          coord = c(8.5480, 47.3730)),
+    list(name = "Muensterhof",                 coord = c(8.5410, 47.3701)),
+    list(name = "Limmatquai_Rathaus",          coord = c(8.5428, 47.3750)),
+    list(name = "Bahnhofstrasse_Paradeplatz",  coord = c(8.5385, 47.3685)),
+    list(name = "Predigerkirche",              coord = c(8.5451, 47.3739)),
+    list(name = "Zentralhof",                  coord = c(8.5440, 47.3765)),
+    list(name = "Stadthaus",                   coord = c(8.5430, 47.3710)),
+    list(name = "Augustinergasse",             coord = c(8.5390, 47.3700)),
+    list(name = "Rennweg",                     coord = c(8.5375, 47.3690)),
+    list(name = "Oetenbachgasse",              coord = c(8.5395, 47.3715)),
+    list(name = "Schipfe",                     coord = c(8.5415, 47.3725)),
+    list(name = "Kunsthaus_Zurich",            coord = c(8.5485, 47.3700))
   ),
   
   geneva_vieilleville = list(
-    list(name = "St_Pierre_Cathedral",  coord = c(6.1470, 46.2005)),
-    list(name = "Bourg_de_Four",        coord = c(6.1485, 46.2000)),
-    list(name = "Place_du_Bourg_de_Four", coord = c(6.1482, 46.2002)),
-    list(name = "Hotel_de_Ville",       coord = c(6.1480, 46.2010)),
-    list(name = "Treille_Promenade",    coord = c(6.1510, 46.2020)),
-    list(name = "Parc_des_Bastions",    coord = c(6.1455, 46.1995)),  # edge
-    list(name = "Monument_National",    coord = c(6.1478, 46.1980))
+    list(name = "St_Pierre_Cathedral",         coord = c(6.1470, 46.2005)),
+    list(name = "Bourg_de_Four",               coord = c(6.1485, 46.2000)),
+    list(name = "Place_du_Bourg_de_Four",      coord = c(6.1482, 46.2002)),
+    list(name = "Hotel_de_Ville",              coord = c(6.1480, 46.2010)),
+    list(name = "Treille_Promenade",           coord = c(6.1510, 46.2020)),
+    list(name = "Parc_des_Bastions",           coord = c(6.1455, 46.1995)),
+    list(name = "Monument_National",           coord = c(6.1478, 46.1980)),
+    list(name = "Place_du_Grand_Meval",        coord = c(6.1490, 46.2015)),
+    list(name = "Rue_du_Rhone",                coord = c(6.1500, 46.2030)),
+    list(name = "Jardin_Anglais",              coord = c(6.1515, 46.2045)),
+    list(name = "Place_de_la_Fusterie",        coord = c(6.1465, 46.2010)),
+    list(name = "Rue_Haute",                   coord = c(6.1475, 46.1990)),
+    list(name = "Escalier_du_Puits",           coord = c(6.1480, 46.1995)),
+    list(name = "Rue_des_Belles_Filles",       coord = c(6.1495, 46.2008)),
+    list(name = "Temple_de_la_Fusterie",       coord = c(6.1460, 46.2000))
   ),
   
   lausanne_cite = list(
-    list(name = "Lausanne_Cathedral",   coord = c(6.6358, 46.5228)),
-    list(name = "Place_de_la_Palud",    coord = c(6.6325, 46.5210)),
-    list(name = "Hotel_de_Ville",       coord = c(6.6330, 46.5212)),
-    list(name = "Chateau_St_Maire",     coord = c(6.6370, 46.5235)),
-    list(name = "Escaliers_du_Marche",  coord = c(6.6340, 46.5220)),  # famous covered stairs
-    list(name = "Palais_de_Rumine",     coord = c(6.6305, 46.5205)),
-    list(name = "Rue_de_Bourg",         coord = c(6.6360, 46.5190))   # slightly lower
+    list(name = "Lausanne_Cathedral",          coord = c(6.6358, 46.5228)),
+    list(name = "Place_de_la_Palud",           coord = c(6.6325, 46.5210)),
+    list(name = "Hotel_de_Ville",              coord = c(6.6330, 46.5212)),
+    list(name = "Chateau_St_Maire",            coord = c(6.6370, 46.5235)),
+    list(name = "Escaliers_du_Marche",         coord = c(6.6340, 46.5220)),
+    list(name = "Palais_de_Rumine",            coord = c(6.6305, 46.5205)),
+    list(name = "Rue_de_Bourg",                coord = c(6.6360, 46.5190)),
+    list(name = "Place_St_Francois",           coord = c(6.6300, 46.5195)),
+    list(name = "Rue_de_la_Paix",              coord = c(6.6320, 46.5200)),
+    list(name = "Cathédrale_Parvis",           coord = c(6.6360, 46.5225)),
+    list(name = "Rue_St_Laurent",              coord = c(6.6345, 46.5208)),
+    list(name = "Fontaine_de_la_Justice",      coord = c(6.6328, 46.5212)),
+    list(name = "Rue_Pudra",                   coord = c(6.6350, 46.5215)),
+    list(name = "Escaliers_Mon-Repos",         coord = c(6.6380, 46.5240)),
+    list(name = "Place_Pury",                  coord = c(6.6290, 46.5185))
   ),
   
   bern_altstadt = list(
-    list(name = "Zytglogge",            coord = c(7.4473, 46.9475)),   # famous clock tower
-    list(name = "Bundeshaus",           coord = c(7.4441, 46.9466)),   # Parliament
-    list(name = "Kramgasse",            coord = c(7.4503, 46.9479)),   # arcaded main street
-    list(name = "Berner_Muenster",      coord = c(7.4522, 46.9474)),   # cathedral
-    list(name = "Einstein_Haus",        coord = c(7.4510, 46.9480)),   # Einstein lived here
-    list(name = "Kaefigturm",           coord = c(7.4455, 46.9482)),   # Prison Tower
-    list(name = "Rathaus",              coord = c(7.4508, 46.9485)),   # Town Hall
-    list(name = "Barenplatz",           coord = c(7.4450, 46.9470))    # lively square
+    list(name = "Zytglogge",                   coord = c(7.4473, 46.9475)),
+    list(name = "Bundeshaus",                  coord = c(7.4441, 46.9466)),
+    list(name = "Kramgasse",                   coord = c(7.4503, 46.9479)),
+    list(name = "Berner_Muenster",             coord = c(7.4522, 46.9474)),
+    list(name = "Einstein_Haus",               coord = c(7.4510, 46.9480)),
+    list(name = "Kaefigturm",                  coord = c(7.4455, 46.9482)),
+    list(name = "Rathaus",                     coord = c(7.4508, 46.9485)),
+    list(name = "Barenplatz",                  coord = c(7.4450, 46.9470)),
+    list(name = "Nydeggbruecke",               coord = c(7.4570, 46.9470)),
+    list(name = "Nydeggkirche",                coord = c(7.4585, 46.9465)),
+    list(name = "Gerechtigkeitsgasse",         coord = c(7.4530, 46.9480)),
+    list(name = "Junkerngasse",                coord = c(7.4545, 46.9475)),
+    list(name = "Muensterplatz",               coord = c(7.4525, 46.9470)),
+    list(name = "Casinosplatz",                coord = c(7.4435, 46.9460)),
+    list(name = "Aarbergergasse",              coord = c(7.4420, 46.9475))
   ),
   
   basel_altstadt = list(
-    list(name = "Basler_Muenster",      coord = c(7.5922, 47.5573)),   # red sandstone cathedral
-    list(name = "Marktplatz_Rathaus",   coord = c(7.5880, 47.5580)),   # colorful town hall
-    list(name = "Mittlere_Bruecke",     coord = c(7.5905, 47.5595)),   # famous Rhine bridge
-    list(name = "Spalentor",            coord = c(7.5810, 47.5578)),   # medieval gate
-    list(name = "Tinguely_Brunnen",     coord = c(7.5900, 47.5585)),   # kinetic fountain
-    list(name = "Barfuesserplatz",      coord = c(7.5890, 47.5540)),   # central square
-    list(name = "Muensterplatz",        coord = c(7.5925, 47.5565))    # cathedral square
+    list(name = "Basler_Muenster",             coord = c(7.5922, 47.5573)),
+    list(name = "Marktplatz_Rathaus",          coord = c(7.5880, 47.5580)),
+    list(name = "Mittlere_Bruecke",            coord = c(7.5905, 47.5595)),
+    list(name = "Spalentor",                   coord = c(7.5810, 47.5578)),
+    list(name = "Tinguely_Brunnen",            coord = c(7.5900, 47.5585)),
+    list(name = "Barfuesserplatz",             coord = c(7.5890, 47.5540)),
+    list(name = "Muensterplatz",               coord = c(7.5925, 47.5565)),
+    list(name = "Spalenberg",                  coord = c(7.5825, 47.5565)),
+    list(name = "Gerbergasse",                 coord = c(7.5875, 47.5570)),
+    list(name = "Martinsgasse",                coord = c(7.5900, 47.5560)),
+    list(name = "Heuberg",                     coord = c(7.5850, 47.5555)),
+    list(name = "Nadelberg",                   coord = c(7.5830, 47.5570)),
+    list(name = "Rheinsprung",                 coord = c(7.5910, 47.5600)),
+    list(name = "Fischmarkt",                  coord = c(7.5895, 47.5590))
   ),
   
   luzern_altstadt = list(
-    list(name = "Kapellbruecke",        coord = c(8.3080, 47.0505)),   # iconic chapel bridge
-    list(name = "Loewendenkmal",        coord = c(8.3150, 47.0580)),   # Lion Monument
-    list(name = "Museggmauer",          coord = c(8.3055, 47.0550)),   # city wall
-    list(name = "Spreuerbruecke",       coord = c(8.3020, 47.0520)),   # second wooden bridge
-    list(name = "Jesuitenkirche",       coord = c(8.3075, 47.0510)),   # baroque church
-    list(name = "Rathaus",              coord = c(8.3070, 47.0525)),   # town hall
-    list(name = "Bourbakipanorama",     coord = c(8.3120, 47.0540)),   # panorama painting
-    list(name = "Weinmarkt",            coord = c(8.3075, 47.0500))    # wine market square
+    list(name = "Kapellbruecke",               coord = c(8.3080, 47.0505)),
+    list(name = "Loewendenkmal",               coord = c(8.3150, 47.0580)),
+    list(name = "Museggmauer",                 coord = c(8.3055, 47.0550)),
+    list(name = "Spreuerbruecke",              coord = c(8.3020, 47.0520)),
+    list(name = "Jesuitenkirche",              coord = c(8.3075, 47.0510)),
+    list(name = "Rathaus",                     coord = c(8.3070, 47.0525)),
+    list(name = "Bourbakipanorama",            coord = c(8.3120, 47.0540)),
+    list(name = "Weinmarkt",                   coord = c(8.3075, 47.0500)),
+    list(name = "Sternenplatz",                coord = c(8.3065, 47.0515)),
+    list(name = "Hirschenplatz",               coord = c(8.3090, 47.0500)),
+    list(name = "Schwanenplatz",               coord = c(8.3100, 47.0495)),
+    list(name = "Weggisgasse",                 coord = c(8.3085, 47.0490)),
+    list(name = "Fischmarkt",                  coord = c(8.3060, 47.0520)),
+    list(name = "Altstadtmauer_Towers",        coord = c(8.3040, 47.0560))
+  ),
+  
+  annecy_vieille_ville = list(
+    list(name = "Palais_de_lIle",              coord = c(6.1245, 45.8995)),
+    list(name = "Chateau_dAnnecy",             coord = c(6.1250, 45.9010)),
+    list(name = "Pont_des_Amours",             coord = c(6.1240, 45.8980)),
+    list(name = "Thiouv_Canals",               coord = c(6.1230, 45.8990)),
+    list(name = "Rue_Sainte_Claire",           coord = c(6.1225, 45.8998)),
+    list(name = "Cathedrale_Saint_Pierre",     coord = c(6.1210, 45.8992)),
+    list(name = "Jardins_de_lEurope",          coord = c(6.1205, 45.8975)),
+    list(name = "Quai_de_lIle",                coord = c(6.1240, 45.8990)),
+    list(name = "Passage_de_lIle",             coord = c(6.1235, 45.8992)),
+    list(name = "Rue_Carnot",                  coord = c(6.1220, 45.9000)),
+    list(name = "Place_Notte",                 coord = c(6.1228, 45.8995)),
+    list(name = "Pont_Morens",                 coord = c(6.1255, 45.8985)),
+    list(name = "Rue_des_Penitents",           coord = c(6.1230, 45.9005)),
+    list(name = "Eglise_Saint_Maurice",        coord = c(6.1215, 45.9000))
+  ),
+  
+  freiburg_altstadt = list(
+    list(name = "Freiburger_Muenster",         coord = c(7.9955, 47.9955)),
+    list(name = "Rathausplatz",                coord = c(7.9950, 47.9950)),
+    list(name = "Schwabentor",                 coord = c(7.9920, 47.9930)),
+    list(name = "Martinstor",                  coord = c(7.9940, 47.9945)),
+    list(name = "Augustinerplatz",             coord = c(7.9935, 47.9960)),
+    list(name = "Baechle_Streams",             coord = c(7.9950, 47.9955)),
+    list(name = "Collegium_Building",          coord = c(7.9960, 47.9940)),
+    list(name = "Konviktstrasse",              coord = c(7.9945, 47.9965)),
+    list(name = "Muensterplatz",               coord = c(7.9958, 47.9958)),
+    list(name = "Salzstrasse",                 coord = c(7.9930, 47.9950)),
+    list(name = "Rathausgasse",                coord = c(7.9955, 47.9945)),
+    list(name = "Bertoldstrasse",              coord = c(7.9970, 47.9940)),
+    list(name = "Universitaetskirche",         coord = c(7.9965, 47.9935)),
+    list(name = "Schiffstrasse",               coord = c(7.9925, 47.9945))
   )
 )
