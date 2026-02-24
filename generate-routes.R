@@ -1,3 +1,5 @@
+library(openrouteservice)
+
 eurotrip <- list()
 
 for (city_name in names(landmarks)) {
