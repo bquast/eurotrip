@@ -108,8 +108,8 @@ for (city_name in names(landmarks)) {
 cat("Total routes collected:", length(eurotrip), "\n")
 
 # Save as .RData (can load with load("eurotrip_named_landmarks.RData"))
-save(eurotrip, landmarks, file = "eurotrip_named_landmarks.RData")
-cat("Saved to eurotrip_named_landmarks.RData\n")
+save(eurotrip, landmarks, file = "eurotrip_named_landmarks.Rdata")
+cat("Saved to eurotrip_named_landmarks.Rdata\n")
 
 # Optional: quick look at first route if any exist
 if (length(eurotrip) > 0) {
